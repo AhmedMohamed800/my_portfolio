@@ -4,6 +4,7 @@
   --red: #c8102e;
   --black: #0b0706;
   --cream: #fffff1;
+  --white: #ffffff;
   --gold: #c09300;
 }
 
@@ -14,12 +15,12 @@
 }
 
 body {
-  background: #ffffff;
+  background: var(--white);
   color: var(--black);
   overflow-x: hidden;
 }
 
-.container {
+.section-container {
   max-width: 100%;
 }
 
@@ -46,7 +47,9 @@ body {
 }
 
 @media (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
+  .section-container {
+    width: 1440px;
+    padding-inline: 0 !important;
+    margin-inline: auto !important;
   }
 }
