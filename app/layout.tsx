@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} h-full `}>
-      <body className="relative flex flex-col gap-16">{children}</body>
+      <body className="relative flex flex-col ">{children}</body>
     </html>
   );
 }

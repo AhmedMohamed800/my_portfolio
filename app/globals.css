@@ -10,6 +10,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Poppins", "Poppins Fallback";
   margin: 0;
   padding: 0;
 }
@@ -17,7 +18,7 @@
 body {
   background: var(--white);
   color: var(--black);
-  overflow-x: hidden;
+  font-family: "Poppins", "Poppins Fallback";
 }
 
 .section-container {
@@ -49,7 +50,6 @@ body {
 @media (min-width: 1440px) {
   .section-container {
     width: 1440px;
-    padding-inline: 0 !important;
     margin-inline: auto !important;
   }
 }

@@ -24,8 +24,8 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="container-padding   border-b-black border-b border-dashed">
-      <div className="py-3!  section-container flex justify-between items-center">
+    <nav className="  border-b-black border-b border-dashed">
+      <div className="py-3! container-padding  section-container flex justify-between items-center">
         <Image src="/logo.svg" width={93} height={44} alt="Ahmed's logo" />
         <ul className="hidden md:flex gap-4 uppercase font-normal">
           <li>
