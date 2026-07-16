@@ -8,11 +8,17 @@
   --gold: #c09300;
 }
 
+@theme {
+  --color-red: var(--red);
+  --color-black: var(--black);
+  --color-cream: var(--cream);
+  --color-white: var(--white);
+  --color-gold: var(--gold);
+}
+
 * {
   box-sizing: border-box;
   font-family: "Poppins", "Poppins Fallback";
-  margin: 0;
-  padding: 0;
 }
 
 body {
