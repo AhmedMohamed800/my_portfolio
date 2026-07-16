@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import "lenis/dist/lenis.css";
+import { LenisProvider } from "./_components/Providers/lenis-provider";
+import ScrollAnimations from "./_components/Providers/ScrollAnimations";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -20,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} h-full `}>
-      <body className="relative flex flex-col ">{children}</body>
+      <body className="relative flex flex-col ">
+        <LenisProvider>
+          <ScrollAnimations>{children}</ScrollAnimations>
+        </LenisProvider>
+      </body>
     </html>
   );
 }
