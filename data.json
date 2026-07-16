@@ -1,0 +1,76 @@
+{
+  "projects": [
+    {
+      "num": "001",
+      "id": "RandomID1",
+      "title": "Project name here please write it here por favor",
+      "img": "/img_holder.jpg",
+      "role": "This is the first project.",
+      "client": "Greenline Consultant",
+      "date": "2023-01-01",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+      "liveLink": "https://example.com/project-one",
+      "sourceLink": "https://example.com/project-one"
+    },
+    {
+      "num": "002",
+      "id": "RandomID2",
+      "title": "Project One",
+      "img": "/me.png",
+      "role": "This is the first project.",
+      "client": "Greenline Consultant",
+      "date": "2023-01-01",
+      "description": "This is the second project.",
+      "liveLink": "https://example.com/project-one",
+      "sourceLink": "https://example.com/project-one"
+    },
+    {
+      "num": "003",
+      "id": "RandomID3",
+      "title": "Project One",
+      "img": "/img_holder.jpg",
+      "role": "This is the first project.",
+      "client": "Greenline Consultant",
+      "date": "2023-01-01",
+      "description": "This is the second project.",
+      "liveLink": "https://example.com/project-one",
+      "sourceLink": "https://example.com/project-one"
+    },
+    {
+      "num": "004",
+      "id": "RandomID4",
+      "title": "Project One",
+      "img": "/img_holder.jpg",
+      "role": "This is the first project.",
+      "client": "Greenline Consultant",
+      "date": "2023-01-01",
+      "description": "This is the second project.",
+      "liveLink": "https://example.com/project-one",
+      "sourceLink": "https://example.com/project-one"
+    },
+    {
+      "num": "005",
+      "id": "RandomID5",
+      "title": "Project One",
+      "img": "/img_holder.jpg",
+      "role": "This is the first project.",
+      "client": "Greenline Consultant",
+      "date": "2023-01-01",
+      "description": "This is the second project.",
+      "liveLink": "https://example.com/project-one",
+      "sourceLink": "https://example.com/project-one"
+    },
+    {
+      "num": "006",
+      "id": "RandomID6",
+      "title": "Project One",
+      "img": "/img_holder.jpg",
+      "role": "This is the first project.",
+      "client": "Greenline Consultant",
+      "date": "2023-01-01",
+      "description": "This is the second project.",
+      "liveLink": "https://example.com/project-one",
+      "sourceLink": "https://example.com/project-one"
+    }
+  ]
+}
