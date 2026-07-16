@@ -11,7 +11,10 @@ export default function WorkSection({ projects }: WorkSectionProps) {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
   return (
-    <section className="section-container container-padding mt-12 mb-12 lg:mt-16 lg:mb-16 ">
+    <section
+      className="section-container container-padding mt-12 mb-12 lg:mt-16 lg:mb-16 "
+      id="work"
+    >
       <h1 className="text-5xl font-bold uppercase">Recent Work</h1>
 
       <div

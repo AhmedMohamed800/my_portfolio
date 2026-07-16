@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
+import CustomEase from "gsap/src/CustomEase";
 export default function WorkRow({
   id,
   title,
@@ -35,7 +35,10 @@ export default function WorkRow({
         marginBottom: 14,
 
         duration: 0.5,
-        ease: "power2.in",
+        ease: CustomEase.create(
+          "custom",
+          "M0,0 C0.126,0.382 0.293,0.973 0.451,1.121 0.643,1.3 0.818,1.001 1,1 ",
+        ),
       })
       .to(
         arrowRef.current,

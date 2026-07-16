@@ -30,7 +30,6 @@ export default function ServicesSection() {
           pin: true,
           pinSpacing: true,
           scrub: true,
-          markers: true,
           invalidateOnRefresh: true,
         },
       });
@@ -39,8 +38,12 @@ export default function ServicesSection() {
   );
 
   return (
-    <section className="h-dvh bg-red overflow-x-clip" ref={container}>
-      <div className="section-container container-padding py-16 lg:py-24 ">
+    <section
+      className="h-dvh bg-red overflow-x-clip "
+      id="services"
+      ref={container}
+    >
+      <div className="section-container container-padding py-16 lg:py-24  ">
         <div className="border-b border-dashed border-white pb-4">
           <h1 className="text-5xl text-white uppercase font-bold">
             What I do?
@@ -48,7 +51,7 @@ export default function ServicesSection() {
         </div>
         <div className="servicesLayout mt-16  relative bg-red">
           <div
-            className="servicesContainer flex gap-8 absolute top-0 left-0 bg-red"
+            className="servicesContainer flex gap-8 absolute top-0 left-0 bg-red "
             ref={servicesRef}
           >
             <ServiceCard
