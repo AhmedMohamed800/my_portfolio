@@ -11,11 +11,11 @@ export default function WorkSection({ projects }: WorkSectionProps) {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
   return (
-    <section className="section-container container-padding mt-16 min-h-dvh">
+    <section className="section-container container-padding mt-12 lg:mt-16 min-h-dvh">
       <h1 className="text-5xl font-bold uppercase">Recent Work</h1>
 
       <div
-        className="flex flex-col w-full mt-12"
+        className="flex flex-col w-full mt-8 lg:mt-12"
         onMouseMove={(e) =>
           setMouse({
             x: e.clientX,
@@ -24,8 +24,8 @@ export default function WorkSection({ projects }: WorkSectionProps) {
         }
         onMouseLeave={() => setPreview(null)}
       >
-        <div className="flex justify-between w-full gap-4 border-b border-dashed text-[18px] pb-2">
-          <div className="flex-1">Number</div>
+        <div className="hidden lg:flex justify-between w-full gap-4  border-b border-dashed text-[18px] pb-2">
+          <div className="flex-2">Number</div>
           <div className="flex-5">Title</div>
           <div className="flex-3">Role</div>
           <div className="flex-3">Client</div>

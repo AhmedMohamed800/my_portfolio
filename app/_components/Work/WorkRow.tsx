@@ -31,14 +31,16 @@ export default function WorkRow({
       .timeline({ paused: true })
       .to(projectInfo.current, {
         height: "auto",
-        marginTop: 16,
+        marginTop: 8,
+        marginBottom: 14,
+
         duration: 0.5,
         ease: "power2.in",
       })
       .to(
         arrowRef.current,
         {
-          rotate: 90, // left -> down
+          rotate: 90,
           duration: 0.4,
           ease: "power2.in",
         },
@@ -59,10 +61,10 @@ export default function WorkRow({
 
   return (
     <div
-      className={`flex flex-col  w-full  gap-0 border-b border-dashed text-[16px] py-4`}
+      className={`flex flex-col  w-full  gap-0 border-b border-dashed text-[16px] `}
     >
       <div
-        className="flex justify-between"
+        className="flex flex-col lg:flex-row  justify-between cursor-pointer lg:gap-4 relative  py-4"
         onMouseEnter={() => {
           if (!isOpen.current) {
             onHover();
@@ -70,12 +72,31 @@ export default function WorkRow({
         }}
         onClick={toggle}
       >
-        <div className="flex-1">{num}</div>
-        <div className="flex-5">{title}</div>
-        <div className="flex-3">{role}</div>
-        <div className="flex-3">{client}</div>
-        <div className="flex-2">{date}</div>
-        <div className="flex-1 flex justify-end">
+        <div className="flex-2 font-medium text-[18px] lg:font-normal lg:text-[16px]">
+          {num}
+        </div>
+        <div className="flex-5 font-medium text-[18px] mb-4 lg:mb-0 lg:font-normal lg:text-[16px]">
+          {title}
+        </div>
+        <div className="flex-3 flex gap-4 mb-2 lg:mb-0">
+          <span className="flex-1 block lg:hidden text-red lg:text-black">
+            Role
+          </span>
+          <span className="flex-6">{role}</span>
+        </div>
+        <div className="flex-3 flex gap-4  mb-2 lg:mb-0">
+          <span className="flex-1 block lg:hidden text-red lg:text-black">
+            Client
+          </span>
+          <span className="flex-6">{client}</span>
+        </div>
+        <div className="flex-2 flex gap-4  mb-2 lg:mb-0">
+          <span className="flex-1 block lg:hidden text-red lg:text-black">
+            Date
+          </span>
+          <span className="flex-6">{date}</span>
+        </div>
+        <div className="flex-1 flex justify-end absolute top-[20px] right-0 lg:relative lg:top-0 ">
           <Image
             ref={arrowRef}
             src="/projects/arrow-left.svg"
@@ -87,11 +108,11 @@ export default function WorkRow({
       </div>
 
       <div
-        className="projectInfo flex flex-col lg:flex-row gap-8 items-center h-0  overflow-hidden"
+        className="projectInfo flex flex-col lg:flex-row gap-4 lg:gap-8 lg:items-center h-0  overflow-hidden"
         onMouseEnter={onLeave}
         ref={projectInfo}
       >
-        <div className="relative w-full max-w-[420px] aspect-[16/10] shrink-0">
+        <div className="relative w-full lg:max-w-[420px] aspect-[16/10] shrink-0">
           <Image
             src={img}
             alt={title}
@@ -100,7 +121,7 @@ export default function WorkRow({
             sizes="(max-width: 1024px) 100vw, 420px"
           />
         </div>
-        <article className=" flex flex-col gap-4 flex-1 ">
+        <article className=" flex flex-col gap-3 lg:gap-4 flex-1 ">
           <h3 className="text-2xl uppercase font-medium">{title}</h3>
           <p className="text-[16px]">{description}</p>
           <div className="flex lg:items-center gap-3 flex-col lg:flex-row">
