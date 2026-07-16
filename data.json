@@ -71,6 +71,42 @@
       "description": "This is the second project.",
       "liveLink": "https://example.com/project-one",
       "sourceLink": "https://example.com/project-one"
+    },
+    {
+      "num": "007",
+      "id": "RandomID7",
+      "title": "Project One",
+      "img": "/img_holder.jpg",
+      "role": "This is the first project.",
+      "client": "Greenline Consultant",
+      "date": "2023-01-01",
+      "description": "This is the second project.",
+      "liveLink": "https://example.com/project-one",
+      "sourceLink": "https://example.com/project-one"
+    },
+    {
+      "num": "008",
+      "id": "RandomID8",
+      "title": "Project One",
+      "img": "/img_holder.jpg",
+      "role": "This is the first project.",
+      "client": "Greenline Consultant",
+      "date": "2023-01-01",
+      "description": "This is the second project.",
+      "liveLink": "https://example.com/project-one",
+      "sourceLink": "https://example.com/project-one"
+    },
+    {
+      "num": "009",
+      "id": "RandomID9",
+      "title": "Project One",
+      "img": "/img_holder.jpg",
+      "role": "This is the first project.",
+      "client": "Greenline Consultant",
+      "date": "2023-01-01",
+      "description": "This is the second project.",
+      "liveLink": "https://example.com/project-one",
+      "sourceLink": "https://example.com/project-one"
     }
   ]
 }

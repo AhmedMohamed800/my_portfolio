@@ -5,6 +5,7 @@ import Navbar from "./_components/Layout/Navbar";
 import AboutSection from "./_components/About/AboutSection";
 import ServicesSection from "./_components/Services/ServicesSection";
 import WorkSection from "./_components/Work/WorkSection";
+import SkillsSection from "./_components/Skills/SkillsSection";
 
 export default async function Home() {
   const filePath = path.join(process.cwd(), "data.json");
@@ -17,6 +18,7 @@ export default async function Home() {
       <AboutSection />
       <ServicesSection />
       <WorkSection projects={data.projects} />
+      <SkillsSection />
     </>
   );
 }
