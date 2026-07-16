@@ -17,7 +17,6 @@ export default function ContactSection() {
         scrollTrigger: {
           trigger: gridContainer.current,
           start: "end 70%",
-          markers: true,
         },
       });
     },

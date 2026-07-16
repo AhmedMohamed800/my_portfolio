@@ -18,13 +18,14 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Poppins", "Poppins Fallback";
+  font-family: var(--font-thmanyah), sans-serif;
 }
 
 body {
-  background: var(--white);
-  color: var(--black);
-  font-family: "Poppins", "Poppins Fallback";
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-thmanyah), sans-serif;
+  overflow-x: hidden;
 }
 
 .section-container {
@@ -33,6 +34,30 @@ body {
 
 .container-padding {
   padding-inline: 16px;
+}
+
+.link-item {
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.link-item-child-1,
+.link-item-child-2 {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.link-item-child-2 {
+  transform: translateY(100%);
+}
+
+.link-item:hover .link-item-child-1 {
+  transform: translateY(-100%);
+}
+
+.link-item:hover .link-item-child-2 {
+  transform: translateY(-100%);
 }
 
 @media (min-width: 768px) {
@@ -51,6 +76,11 @@ body {
   .container-padding {
     padding-inline: 64px;
   }
+}
+
+/* About section — SplitText line masks */
+.about-line {
+  overflow: hidden;
 }
 
 @media (min-width: 1440px) {

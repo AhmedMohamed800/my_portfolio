@@ -22,7 +22,7 @@ export default function WorkRow({
   const isOpen = useRef(false);
   const projectInfo = useRef<HTMLDivElement | null>(null);
   const arrowRef = useRef<HTMLImageElement | null>(null);
-  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(useGSAP, CustomEase);
 
   const tl = useRef<GSAPTimeline | null>(null);
 
