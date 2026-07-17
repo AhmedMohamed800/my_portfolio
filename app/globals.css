@@ -87,6 +87,10 @@ body {
   overflow: hidden;
 }
 
+.about-image {
+  clip-path: inset(100% 0% 0% 0%);
+}
+
 @media (min-width: 1440px) {
   .section-container {
     width: 1440px;

@@ -94,9 +94,9 @@ export default function AboutSection() {
       }
 
       if (NumbersContainerRef.current) {
-        tl.from(NumbersContainerRef.current.children, {
-          opacity: 0,
-          y: 30,
+        tl.to(NumbersContainerRef.current.children, {
+          opacity: 1,
+          y: 0,
           stagger: 0.1,
           ease: "power3.out",
         });
@@ -121,10 +121,10 @@ export default function AboutSection() {
       // --- Image: clip reveal ---
       const imageEl = sectionRef.current?.querySelector(".about-image");
       if (imageEl) {
-        tl.from(
+        tl.to(
           imageEl,
           {
-            clipPath: "inset(100% 0% 0% 0%)",
+            clipPath: "inset(0% 0% 0% 0%)",
             duration: 1.2,
             ease: "power4.inOut",
           },
@@ -164,22 +164,22 @@ export default function AboutSection() {
             </p>
           </div>
           <div
-            className="grid grid-auto-fill-200 gap-4 mt-2 "
+            className="grid grid-auto-fill-200 gap-4 mt-2  "
             ref={NumbersContainerRef}
           >
-            <article className="flex flex-col gap-1 py-4 px-4 rounded-sm items-center bg-black border border-red text-white">
+            <article className="flex flex-col gap-1 py-4 px-4 opacity-0 translate-y-8 rounded-sm items-center bg-black border border-red text-white">
               <h3 className="text-2xl text-red">&lt;6&gt;</h3>
               <p className=" text-white text-center ">Websites Delivered</p>
             </article>
-            <article className="flex flex-col gap-1 py-4 px-4 rounded-sm items-center bg-black border border-red text-white">
+            <article className="flex flex-col gap-1 py-4 px-4 opacity-0 translate-y-8 rounded-sm items-center bg-black border border-red text-white">
               <h3 className="text-2xl text-red">&lt;95+&gt;</h3>
               <p className="text-white text-center">Students Mentored</p>
             </article>
-            <article className="flex flex-col gap-1 py-4 px-4 rounded-sm items-center bg-black border border-red text-white">
+            <article className="flex flex-col gap-1 py-4 px-4 opacity-0 translate-y-8 rounded-sm items-center bg-black border border-red text-white">
               <h3 className="text-2xl text-red">&lt;160+&gt;</h3>
               <p className=" text-white text-center">Hours Mentoring</p>
             </article>
-            <article className="flex flex-col gap-1 py-4 px-4 rounded-sm items-center bg-black border border-red text-white">
+            <article className="flex flex-col gap-1 py-4 px-4 opacity-0 translate-y-8 rounded-sm items-center bg-black border border-red text-white">
               <h3 className="text-2xl text-red">&lt;Infinity&gt;</h3>
               <p className=" text-white text-center">Vibes</p>
             </article>
