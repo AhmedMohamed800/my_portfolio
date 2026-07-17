@@ -16,8 +16,6 @@ export default function Navbar() {
   const navLinksRef = useRef<HTMLUListElement | null>(null);
   const ctaBtnRef = useRef<HTMLButtonElement | null>(null);
 
-  const { contextSafe } = useGSAP();
-
   // --- Page-load entrance animation ---
   useGSAP(
     () => {
@@ -88,17 +86,20 @@ export default function Navbar() {
     { scope: navRef },
   );
 
-  const openNavClick = contextSafe(() => {
+  const openNavClick = () => {
     const isOpen = !isMenuOpenRef.current;
     isMenuOpenRef.current = isOpen;
-    if (isOpen) gsap.set(navMobileRef.current, { x: "-100%" });
+
+    if (isOpen) {
+      gsap.set(navMobileRef.current, { x: "-100%" });
+    }
 
     gsap.to(navMobileRef.current, {
       x: isOpen ? "0%" : "-100%",
       duration: 0.7,
       ease: "power2.in",
     });
-  });
+  };
 
   return (
     <nav className="z-50 border-b-white border-b  " ref={navRef}>

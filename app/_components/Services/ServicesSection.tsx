@@ -5,11 +5,14 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ServiceCard from "./ServiceCard";
 import { useRef } from "react";
+import { SplitText } from "gsap/SplitText";
 
 export default function ServicesSection() {
   const container = useRef<HTMLDivElement | null>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
+  const serviceTitle = useRef<HTMLHeadingElement | null>(null);
+
+  gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
   useGSAP(
     () => {
       const containerCurrent = servicesRef.current;
@@ -21,7 +24,7 @@ export default function ServicesSection() {
       };
 
       gsap.to(servicesRef.current, {
-        x: -getDistance(),
+        x: () => -getDistance(),
         ease: "none",
         scrollTrigger: {
           trigger: container.current,
@@ -33,46 +36,89 @@ export default function ServicesSection() {
           invalidateOnRefresh: true,
         },
       });
+
+      const tl = gsap.timeline({
+        defaults: { ease: "power4.out" },
+        scrollTrigger: {
+          trigger: container.current,
+          start: "start 70%",
+          markers: true,
+        },
+      });
+
+      if (serviceTitle.current) {
+        gsap.set(serviceTitle.current, { autoAlpha: 1 });
+
+        const headingSplit = SplitText.create(serviceTitle.current, {
+          type: "chars",
+          mask: "chars",
+        });
+
+        tl.from(headingSplit.chars, {
+          y: "100%",
+          opacity: 0,
+          duration: 0.9,
+          stagger: 0.03,
+          ease: "power4.out",
+        });
+      }
+
+      if (servicesRef.current) {
+        tl.from(
+          servicesRef.current?.children,
+          {
+            opacity: 0,
+            y: 50,
+            stagger: 0.1,
+            ease: "back",
+            duration: 0.6,
+          },
+          "<",
+        );
+      }
     },
     { scope: container },
   );
 
   return (
     <section
-      className="h-dvh bg-red overflow-x-clip "
+      className=" h-dvh  bg-red overflow-x-clip "
       id="services"
       ref={container}
     >
-      <div className="section-container container-padding py-16 lg:py-24  ">
+      <div className=" section-container container-padding py-12 lg:py-24  ">
         <div className="border-b border-dashed border-white pb-4">
-          <h1 className="text-5xl text-white uppercase font-bold">
+          <h1
+            ref={serviceTitle}
+            className="text-5xl text-white uppercase font-bold"
+          >
             What I do?
           </h1>
         </div>
-        <div className="servicesLayout mt-16  relative bg-red">
+        <div className="servicesLayout mt-12 lg:mt-16  relative bg-red">
           <div
             className="servicesContainer flex gap-8 absolute top-0 left-0 bg-red "
             ref={servicesRef}
           >
             <ServiceCard
-              img="img_holder.jpg"
-              title="Creating Websites"
-              description="A website tailored for your identity and goals"
-            />
-            <ServiceCard
-              img="img_holder.jpg"
-              title="Teaching Web Development"
-              description="Guiding beginners from fundamentals to real-world skills"
-            />
-            <ServiceCard
-              img="img_holder.jpg"
+              img="services/applications.webp"
               title="Building Web Applications"
-              description="Interactive systems built to solve real problems"
+              description="Interactive systems built to solve real problems."
             />
             <ServiceCard
-              img="img_holder.jpg"
+              img="services/websites.webp"
+              title="Creating Websites"
+              description="Modern, responsive websites tailored to your brand and business goals."
+            />
+            <ServiceCard
+              img="services/servers.webp"
               title="Website Support"
-              description="Fixing bugs, adding features, improving performance, and keeping sites running."
+              description="Fixing bugs, adding features, improving performance, and keeping your website running smoothly."
+            />
+            <ServiceCard
+              img="services/class.webp"
+              title="Teaching Web Development"
+              description="Helping aspiring developers build practical, real-world web development skills."
             />
           </div>
         </div>
