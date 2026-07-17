@@ -56,7 +56,7 @@ export default function ServicesSection() {
 
         tl.from(headingSplit.chars, {
           y: "100%",
-          opacity: 0,
+          // opacity: 0,
           duration: 0.9,
           stagger: 0.03,
           ease: "power4.out",
@@ -67,8 +67,8 @@ export default function ServicesSection() {
         tl.from(
           servicesRef.current?.children,
           {
-            opacity: 0,
-            y: 50,
+            // opacity: 1,
+            y: 100,
             stagger: 0.1,
             ease: "back",
             duration: 0.6,

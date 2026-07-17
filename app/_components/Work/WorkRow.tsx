@@ -10,6 +10,7 @@ export default function WorkRow({
   title,
   num,
   img,
+  technologies,
   role,
   client,
   date,
@@ -63,9 +64,7 @@ export default function WorkRow({
   };
 
   return (
-    <div
-      className={`flex flex-col  w-full  gap-0 border-b border-dashed text-[16px] `}
-    >
+    <div className={`work-row-item flex flex-col  w-full  gap-0 border-b  text-[16px] `}>
       <div
         className="flex flex-col lg:flex-row  justify-between cursor-pointer lg:gap-4 relative  py-4"
         onMouseEnter={() => {
@@ -127,24 +126,88 @@ export default function WorkRow({
         <article className=" flex flex-col gap-3 lg:gap-4 flex-1 ">
           <h3 className="text-2xl uppercase font-medium">{title}</h3>
           <p className="text-[16px]">{description}</p>
+
           <div className="flex lg:items-center gap-3 flex-col lg:flex-row">
             {liveLink && (
-              <a
-                href={liveLink}
-                className="p-2 border border-dashed text-center"
-              >
-                View Website
-              </a>
+              <button className="link-item  cursor-pointer  flex  uppercase border rounded-sm hover:bg-black hover:text-white transition-all">
+                <a
+                  href={liveLink}
+                  target="_black"
+                  className="flex flex-col overflow-hidden h-12 px-2"
+                >
+                  <span className="flex gap-2 items-center link-item-child-1 leading-[120%]  pt-[14px]">
+                    <span>
+                      <Image
+                        src="/projects/externalLink.svg"
+                        alt="externalLink"
+                        width={20}
+                        height={20}
+                      />
+                    </span>
+                    <span> View Website</span>
+                  </span>
+                  <span
+                    className="flex gap-2 items-center link-item-child-2 leading-[120%]"
+                    aria-hidden="true"
+                  >
+                    <span>
+                      <Image
+                        src="/projects/externalLink.svg"
+                        alt="externalLink"
+                        width={20}
+                        height={20}
+                      />
+                    </span>
+                    <span> View Website</span>
+                  </span>
+                </a>
+              </button>
             )}
+
             {sourceLink && (
-              <a
-                href={sourceLink}
-                className="py-2 px-4 bg-black text-white border border-white text-center"
-              >
-                Source Code
-              </a>
+              <button className="link-item  cursor-pointer  flex  uppercase border rounded-sm hover:bg-black hover:text-white transition-all">
+                <a
+                  href={sourceLink}
+                  target="_black"
+                  className="flex flex-col overflow-hidden h-12 px-2"
+                >
+                  <span className="flex gap-2 items-center link-item-child-1 leading-[120%]  pt-[14px]">
+                    <span>
+                      <Image
+                        src="/projects/github.svg"
+                        alt="github"
+                        width={18}
+                        height={18}
+                      />
+                    </span>
+                    <span>Source Code</span>
+                  </span>
+                  <span
+                    className="flex gap-2 items-center link-item-child-2 leading-[120%]"
+                    aria-hidden="true"
+                  >
+                    <span>
+                      <Image
+                        src="/projects/github.svg"
+                        alt="github"
+                        width={18}
+                        height={18}
+                      />
+                    </span>
+                    <span>Source Code</span>
+                  </span>
+                </a>
+              </button>
             )}
           </div>
+          <ul className="flex gap-2  ">
+            {technologies.map((tech, index) => (
+              <li key={tech}>
+                {tech}
+                {index !== technologies.length - 1 && " -"}
+              </li>
+            ))}
+          </ul>
         </article>
       </div>
     </div>

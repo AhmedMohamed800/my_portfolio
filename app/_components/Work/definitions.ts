@@ -7,6 +7,7 @@ export interface ProjectProps {
   client: string;
   date: string;
   description: string;
+  technologies: string[];
   liveLink: string;
   sourceLink: string;
 }

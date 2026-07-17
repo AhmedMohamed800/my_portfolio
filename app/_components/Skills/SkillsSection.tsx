@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function SkillsSection() {
   return (
-    <section className="bg-black relative min-h-dvh " id="skills">
+    <section className="bg-red relative min-h-dvh " id="skills">
       <div className=" section-container container-padding text-white pt-12 pb-12 lg:pt-16 lg:pb-16 ">
         <h1 className="relative z-3 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase leading-none">
           Skills & Tools
