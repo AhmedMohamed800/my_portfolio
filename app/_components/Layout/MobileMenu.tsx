@@ -10,12 +10,12 @@ const MobileMenu = forwardRef<HTMLDivElement, MobileMenuProps>(
   ({ onClose }, ref) => {
     return (
       <div
-        className="flex flex-col h-dvh w-full fixed bg-white top-0 left-0 py-4! z-50"
+        className="flex flex-col bg-black h-dvh w-full fixed  top-0 left-0 py-4! z-50"
         style={{ transform: "translateX(100%)" }}
         ref={ref}
       >
         <div
-          className="flex px-4! pb-4! border-b h-[53px] border-b-black border-dashed w-full "
+          className="flex px-4! pb-4! border-b h-[53px] border-b-white border-b w-full "
           onClick={onClose}
         >
           <Image

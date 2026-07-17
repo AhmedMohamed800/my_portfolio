@@ -15,6 +15,7 @@ export default function AboutSection() {
   const subtitleRef = useRef<HTMLParagraphElement | null>(null);
   const paragraphRef = useRef<HTMLParagraphElement | null>(null);
   const ctaContainerRef = useRef<HTMLDivElement | null>(null);
+  const NumbersContainerRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
@@ -26,7 +27,6 @@ export default function AboutSection() {
         defaults: { ease: "power4.out" },
         delay: 0.7,
         onComplete: () => {
-          // Revert splits to restore original DOM for proper text reflow on resize
           headingSplit?.revert();
           paraSplit?.revert();
         },
@@ -93,9 +93,17 @@ export default function AboutSection() {
         );
       }
 
+      if (NumbersContainerRef.current) {
+        tl.from(NumbersContainerRef.current.children, {
+          opacity: 0,
+          y: 30,
+          stagger: 0.1,
+          ease: "power3.out",
+        });
+      }
+
       // --- CTA buttons: fade & slide up ---
       if (ctaContainerRef.current) {
-        console.log(ctaContainerRef.current.children);
         tl.to(
           ctaContainerRef.current.children,
           {
@@ -148,14 +156,33 @@ export default function AboutSection() {
         </p>
       </div>
       <div className="flex flex-col lg:flex-row gap-3 md:gap-6 relative h-full mt-2!">
-        <div className="w-full lg:w-[60%] order-2 lg:order-1 h-full sticky top-2 lg:mb-2 ">
+        <div className="w-full lg:w-[60%] order-2 lg:order-1 h-full sticky top-2 lg:mb-4 ">
           <div className="flex items-stretch gap-3">
-            <p ref={paragraphRef} className="invisible  flex-1 py-1">
-              Full Stack Developer with 1 year of experience delivering 5
-              production applications (e-commerce, LMS, corporate) using
-              Next.js, React, and PHP/WordPress. Additionally, mentored 95+
-              students across 160+ hours of live coding instruction.
+            <p ref={paragraphRef} className="invisible flex-1 py-1">
+              I enjoy building things for the web that are fast, accessible, and
+              hopefully a little fun to use.
             </p>
+          </div>
+          <div
+            className="grid grid-auto-fill-200 gap-4 mt-2 "
+            ref={NumbersContainerRef}
+          >
+            <article className="flex flex-col gap-1 py-4 px-4 rounded-sm items-center bg-black border border-red text-white">
+              <h3 className="text-2xl text-red">&lt;6&gt;</h3>
+              <p className=" text-white text-center ">Websites Delivered</p>
+            </article>
+            <article className="flex flex-col gap-1 py-4 px-4 rounded-sm items-center bg-black border border-red text-white">
+              <h3 className="text-2xl text-red">&lt;95+&gt;</h3>
+              <p className="text-white text-center">Students Mentored</p>
+            </article>
+            <article className="flex flex-col gap-1 py-4 px-4 rounded-sm items-center bg-black border border-red text-white">
+              <h3 className="text-2xl text-red">&lt;160+&gt;</h3>
+              <p className=" text-white text-center">Hours Mentoring</p>
+            </article>
+            <article className="flex flex-col gap-1 py-4 px-4 rounded-sm items-center bg-black border border-red text-white">
+              <h3 className="text-2xl text-red">&lt;Infinity&gt;</h3>
+              <p className=" text-white text-center">Vibes</p>
+            </article>
           </div>
           <div
             ref={ctaContainerRef}
@@ -185,7 +212,7 @@ export default function AboutSection() {
         </div>
         <div
           style={{ backgroundImage: `url("/me.webp")` }}
-          className="about-image w-full h-[400px] lg:h-[900px] order-1 bg-cover bg-top bg-no-repeat rounded-md"
+          className="about-image w-full h-100 lg:h-225 order-1 bg-cover bg-top bg-no-repeat rounded-tl-md rounded-tr-md"
         ></div>
       </div>
     </section>

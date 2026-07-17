@@ -60,6 +60,10 @@ body {
   transform: translateY(-100%);
 }
 
+.grid-auto-fill-200 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
 @media (min-width: 768px) {
   .container-padding {
     padding-inline: 24px;
