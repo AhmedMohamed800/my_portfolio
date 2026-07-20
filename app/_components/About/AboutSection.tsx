@@ -139,9 +139,9 @@ export default function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="section-container container-padding mb-4 lg:mb-0"
+      className="section-container container-padding pt-0 lg:pt-0 lg:pb-16"
     >
-      <div className="flex flex-col justify-between md:flex-row md:items-center uppercase gap-2 md:gap-4 my-3 lg:my-6">
+      <div className="flex flex-col justify-between md:flex-row md:items-center uppercase gap-2 md:gap-4 my-4 lg:my-8">
         <h2
           ref={headingRef}
           className="text-[clamp(2.2rem,8vw,6rem)] font-extrabold leading-[100%] flex-1 invisible"
@@ -158,7 +158,7 @@ export default function AboutSection() {
       <div className="flex flex-col lg:flex-row gap-3 md:gap-6 relative h-full mt-2!">
         <div className="w-full lg:w-[60%] order-2 lg:order-1 h-full sticky top-2 lg:mb-4 ">
           <div className="flex items-stretch gap-3">
-            <p ref={paragraphRef} className="invisible flex-1 py-1">
+            <p ref={paragraphRef} className="invisible flex-1 py-1 text-sm sm:text-base">
               I enjoy building things for the web that are fast, accessible, and
               hopefully a little fun to use.
             </p>
@@ -168,20 +168,20 @@ export default function AboutSection() {
             ref={NumbersContainerRef}
           >
             <article className="flex flex-col gap-1 py-4 px-4 opacity-0 translate-y-8 rounded-sm items-center bg-black border border-red text-white">
-              <h3 className="text-2xl text-red">&lt;6&gt;</h3>
-              <p className=" text-white text-center ">Websites Delivered</p>
+              <h3 className="text-xl sm:text-2xl text-red">&lt;6&gt;</h3>
+              <p className="text-white text-center text-sm sm:text-base">Websites Delivered</p>
             </article>
             <article className="flex flex-col gap-1 py-4 px-4 opacity-0 translate-y-8 rounded-sm items-center bg-black border border-red text-white">
-              <h3 className="text-2xl text-red">&lt;95+&gt;</h3>
-              <p className="text-white text-center">Students Mentored</p>
+              <h3 className="text-xl sm:text-2xl text-red">&lt;95+&gt;</h3>
+              <p className="text-white text-center text-sm sm:text-base">Students Mentored</p>
             </article>
             <article className="flex flex-col gap-1 py-4 px-4 opacity-0 translate-y-8 rounded-sm items-center bg-black border border-red text-white">
-              <h3 className="text-2xl text-red">&lt;160+&gt;</h3>
-              <p className=" text-white text-center">Hours Mentoring</p>
+              <h3 className="text-xl sm:text-2xl text-red">&lt;160+&gt;</h3>
+              <p className="text-white text-center text-sm sm:text-base">Hours Mentoring</p>
             </article>
             <article className="flex flex-col gap-1 py-4 px-4 opacity-0 translate-y-8 rounded-sm items-center bg-black border border-red text-white">
-              <h3 className="text-2xl text-red">&lt;Infinity&gt;</h3>
-              <p className=" text-white text-center">Vibes</p>
+              <h3 className="text-xl sm:text-2xl text-red">&lt;Infinity&gt;</h3>
+              <p className="text-white text-center text-sm sm:text-base">Vibes</p>
             </article>
           </div>
           <div
@@ -199,7 +199,7 @@ export default function AboutSection() {
               </a>
             </button>
             <button className="link-item w-full cursor-pointer bg-white text-black translate-y-10 opacity-0 flex uppercase border px-4! py-3! rounded-sm  transition-all">
-              <a href="#work" className="flex flex-col overflow-hidden h-5">
+              <a href="https://drive.google.com/file/d/1pdf2f-oErGuIeDk7bh4muCadwL3h-4tu/view?usp=sharing" className="flex flex-col overflow-hidden h-5">
                 <span className="link-item-child-1 leading-[120%]">
                   Download Resume
                 </span>

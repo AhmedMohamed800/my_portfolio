@@ -113,7 +113,7 @@ export default function Navbar() {
         />
         <ul
           ref={navLinksRef}
-          className="hidden md:flex gap-4 uppercase font-normal"
+          className="hidden md:flex gap-4 lg:gap-6 uppercase font-normal text-sm"
         >
           <li>
             <a
@@ -154,7 +154,7 @@ export default function Navbar() {
         </ul>
         <button
           ref={ctaBtnRef}
-          className="link-item cursor-pointer hidden md:flex uppercase border  px-4! py-3! rounded-sm hover:bg-black hover:text-white transition-all"
+          className="link-item cursor-pointer hidden md:flex uppercase border px-4! py-3! rounded-sm hover:bg-black hover:text-white transition-all text-sm"
         >
           <a href="#contact" className="flex flex-col overflow-hidden h-5">
             <span className="link-item-child-1 leading-[120%]">Contact Me</span>

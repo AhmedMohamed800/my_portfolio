@@ -90,11 +90,11 @@ export default function WorkSection({ projects }: WorkSectionProps) {
 
   return (
     <section
-      className="flex flex-col justify-center section-container container-padding mt-12 mb-12 lg:mt-16 lg:mb-16  min-h-dvh"
+      className="flex flex-col justify-center section-container container-padding pt-12 pb-12 lg:pt-16 lg:pb-16 min-h-dvh"
       id="work"
       ref={sectionRef}
     >
-      <h1 ref={headingRef} className="text-5xl font-bold uppercase invisible">
+      <h1 ref={headingRef} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase leading-none invisible">
         Recent Work
       </h1>
 
@@ -111,7 +111,7 @@ export default function WorkSection({ projects }: WorkSectionProps) {
       >
         <div
           ref={tableHeaderRef}
-          className="hidden lg:flex justify-between w-full gap-4  border-b text-[18px] pb-2"
+          className="hidden lg:flex justify-between w-full gap-4 border-b text-sm lg:text-base pb-2"
         >
           <div className="flex-2">Number</div>
           <div className="flex-5">Title</div>

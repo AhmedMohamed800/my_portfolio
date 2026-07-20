@@ -45,8 +45,8 @@ export default function WorkRow({
         arrowRef.current,
         {
           rotate: 90,
-          duration: 0.4,
-          ease: "power2.in",
+          duration: 0.2,
+          ease: "power2.out",
         },
         0,
       );
@@ -64,7 +64,7 @@ export default function WorkRow({
   };
 
   return (
-    <div className={`work-row-item flex flex-col  w-full  gap-0 border-b  text-[16px] `}>
+    <div className={`work-row-item flex flex-col w-full gap-0 border-b text-sm lg:text-base`}>
       <div
         className="flex flex-col lg:flex-row  justify-between cursor-pointer lg:gap-4 relative  py-4"
         onMouseEnter={() => {
@@ -74,10 +74,10 @@ export default function WorkRow({
         }}
         onClick={toggle}
       >
-        <div className="flex-2 font-medium text-[18px] lg:font-normal lg:text-[16px]">
+        <div className="flex-2 ">
           {num}
         </div>
-        <div className="flex-5 font-medium text-[18px] mb-4 lg:mb-0 lg:font-normal lg:text-[16px]">
+        <div className="flex-5 mb-4 lg:mb-0">
           {title}
         </div>
         <div className="flex-3 flex gap-4 mb-2 lg:mb-0">
@@ -124,12 +124,12 @@ export default function WorkRow({
           />
         </div>
         <article className=" flex flex-col gap-3 lg:gap-4 flex-1 ">
-          <h3 className="text-2xl uppercase font-medium">{title}</h3>
-          <p className="text-[16px]">{description}</p>
+          <h3 className="text-xl sm:text-2xl uppercase font-medium">{title}</h3>
+          <p className="text-sm lg:text-base font-light">{description}</p>
 
           <div className="flex lg:items-center gap-3 flex-col lg:flex-row">
             {liveLink && (
-              <button className="link-item  cursor-pointer  flex  uppercase border rounded-sm hover:bg-black hover:text-white transition-all">
+              <button className="link-item text-sm  cursor-pointer  flex  uppercase border rounded-sm hover:bg-black hover:text-white transition-all">
                 <a
                   href={liveLink}
                   target="_black"
@@ -165,7 +165,7 @@ export default function WorkRow({
             )}
 
             {sourceLink && (
-              <button className="link-item  cursor-pointer  flex  uppercase border rounded-sm hover:bg-black hover:text-white transition-all">
+              <button className="link-item text-sm cursor-pointer  flex  uppercase border rounded-sm hover:bg-black hover:text-white transition-all">
                 <a
                   href={sourceLink}
                   target="_black"
