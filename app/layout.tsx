@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import "lenis/dist/lenis.css";
+import { LenisProvider } from "./_components/Providers/lenis-provider";
+import ScrollAnimations from "./_components/Providers/ScrollAnimations";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const thmanyah = localFont({
+  src: [
+    { path: "../public/fonts/thmanyahsans-Light.otf", weight: "300" },
+    { path: "../public/fonts/thmanyahsans-Regular.otf", weight: "400" },
+    { path: "../public/fonts/thmanyahsans-Medium.otf", weight: "500" },
+    { path: "../public/fonts/thmanyahsans-Bold.otf", weight: "700" },
+    { path: "../public/fonts/thmanyahsans-Black.otf", weight: "900" },
+  ],
+  variable: "--font-thmanyah",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${thmanyah.variable} h-full `}>
+      <body className="relative flex flex-col ">
+        <LenisProvider>
+          <ScrollAnimations>{children}</ScrollAnimations>
+        </LenisProvider>
+      </body>
     </html>
   );
 }

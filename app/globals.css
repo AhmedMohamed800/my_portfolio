@@ -4,27 +4,64 @@
   --red: #c8102e;
   --black: #0b0706;
   --cream: #fffff1;
+  --white: #ffffff;
   --gold: #c09300;
+}
+
+@theme {
+  --color-red: var(--red);
+  --color-black: var(--black);
+  --color-cream: var(--cream);
+  --color-white: var(--white);
+  --color-gold: var(--gold);
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  font-family: var(--font-thmanyah), sans-serif;
 }
 
 body {
-  background: #ffffff;
-  color: var(--black);
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-thmanyah), sans-serif;
   overflow-x: hidden;
 }
 
-.container {
+.section-container {
   max-width: 100%;
 }
 
 .container-padding {
   padding-inline: 16px;
+}
+
+.link-item {
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.link-item-child-1,
+.link-item-child-2 {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.link-item-child-2 {
+  transform: translateY(100%);
+}
+
+.link-item:hover .link-item-child-1 {
+  transform: translateY(-100%);
+}
+
+.link-item:hover .link-item-child-2 {
+  transform: translateY(-100%);
+}
+
+.grid-auto-fill-200 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 @media (min-width: 768px) {
@@ -45,8 +82,18 @@ body {
   }
 }
 
+/* About section — SplitText line masks */
+.about-line {
+  overflow: hidden;
+}
+
+.about-image {
+  clip-path: inset(100% 0% 0% 0%);
+}
+
 @media (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
+  .section-container {
+    width: 1440px;
+    margin-inline: auto !important;
   }
 }
