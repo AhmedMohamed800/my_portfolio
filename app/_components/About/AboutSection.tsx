@@ -199,7 +199,7 @@ export default function AboutSection() {
               </a>
             </button>
             <button className="link-item w-full cursor-pointer bg-white text-black translate-y-10 opacity-0 flex uppercase border px-4! py-3! rounded-sm  transition-all">
-              <a href="https://drive.google.com/file/d/1pdf2f-oErGuIeDk7bh4muCadwL3h-4tu/view?usp=sharing" className="flex flex-col overflow-hidden h-5">
+              <a href="https://drive.google.com/file/d/12k48HRR4NVWXswjAvxXxuP7H-kGOQnJx/view?usp=sharing" className="flex flex-col overflow-hidden h-5">
                 <span className="link-item-child-1 leading-[120%]">
                   Download Resume
                 </span>
