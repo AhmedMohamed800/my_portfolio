@@ -14,7 +14,6 @@ export default function ContactSection() {
   const contactDesc = useRef<HTMLDivElement | null>(null);
   const socialLinks = useRef<HTMLDivElement | null>(null);
 
-
   useGSAP(
     () => {
       const splits: SplitText[] = [];
@@ -102,10 +101,14 @@ export default function ContactSection() {
   );
 
   return (
-    <footer ref={footerRef} id="contact" className="flex flex-col justify-between min-h-dvh overflow-hidden">
+    <footer
+      ref={footerRef}
+      id="contact"
+      className="flex flex-col justify-between gap-32 lg:gap-0 lg:min-h-dvh overflow-hidden"
+    >
       <div
         ref={contactContainer}
-        className="section-container container-padding flex justify-between items-center pt-13 lg:pt-32 "
+        className="section-container container-padding flex flex-col items-start lg:flex-row   justify-between lg:items-center pt-13 lg:pt-32 "
       >
         <div>
           <h1
@@ -117,8 +120,9 @@ export default function ContactSection() {
           <div ref={contactDesc} className="invisible">
             <p>Hmmmmmmmmmmmmmmmmmmmmmmm...</p>
             <p>
-              Reach me at ahmedmoh0107@gmail.com and let&apos;s build something
-              meaningful.
+              Reach me at{" "}
+              <a href="mailto:ahmedmoh0107@gmail.com">ahmedmoh0107@gmail.com</a>{" "}
+              and let&apos;s build something meaningful.
             </p>
           </div>
         </div>
