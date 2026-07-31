@@ -42,7 +42,6 @@ export default function ServicesSection() {
         scrollTrigger: {
           trigger: container.current,
           start: "start 70%",
-          markers: true,
         },
       });
 
@@ -82,20 +81,20 @@ export default function ServicesSection() {
 
   return (
     <section
-      className=" h-dvh  bg-red overflow-x-clip "
+      className=" h-dvh  bg-red overflow-x-clip"
       id="services"
       ref={container}
     >
-      <div className=" section-container container-padding py-12 lg:py-24  ">
+      <div className="section-container container-padding [@media(max-height:770px)]:pt-12!  pt-12 pb-12 lg:pt-32 lg:pb-32">
         <div className="border-b border-dashed border-white pb-4">
           <h1
             ref={serviceTitle}
-            className="text-5xl text-white uppercase font-bold"
+            className="invisible text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white uppercase font-bold leading-none"
           >
             What I do?
           </h1>
         </div>
-        <div className="servicesLayout mt-12 lg:mt-16  relative bg-red">
+        <div className="servicesLayout mt-12 [@media(max-height:770px)]:mt-8! lg:mt-16  relative bg-red">
           <div
             className="servicesContainer flex gap-8 absolute top-0 left-0 bg-red "
             ref={servicesRef}

@@ -10,7 +10,7 @@ export default function ServiceCard({
   description,
 }: ServiceCardProps) {
   return (
-    <article className="flex flex-col gap-4 w-75 lg:w-160">
+    <article className="flex flex-col gap-4 w-75 lg:w-160 ">
       <div
         style={{ backgroundImage: `url('/${img}')` }}
         className="h-100 w-full bg-cover bg-no-repeat rounded-sm bg-center"

@@ -7,55 +7,13 @@ import { useRef } from "react";
 
 export default function ContactSection() {
   gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
+  const footerRef = useRef<HTMLElement | null>(null);
   const gridContainer = useRef<HTMLDivElement | null>(null);
   const contactContainer = useRef<HTMLDivElement | null>(null);
   const contactTitle = useRef<HTMLHeadingElement | null>(null);
   const contactDesc = useRef<HTMLDivElement | null>(null);
   const socialLinks = useRef<HTMLDivElement | null>(null);
 
-  // Footer bar hover effect (kept separate — event-driven, not scroll-driven)
-  useGSAP(
-    () => {
-      const items = gsap.utils.toArray<HTMLElement>(".footer-item");
-
-      items.forEach((item) => {
-        const move = (e: MouseEvent) => {
-          const rect = item.getBoundingClientRect();
-
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-
-          gsap.to(item, {
-            x: x * 0.25,
-            y: y * 0.25,
-            duration: 0.35,
-            ease: "power3.out",
-          });
-        };
-
-        const leave = () => {
-          gsap.to(item, {
-            x: 0,
-            y: 0,
-            duration: 0.6,
-            ease: "elastic.out(1,0.4)",
-          });
-        };
-
-        item.addEventListener("mousemove", move);
-        item.addEventListener("mouseleave", leave);
-      });
-
-      return () => {
-        items.forEach((item) => {
-          item.replaceWith(item.cloneNode(true));
-        });
-      };
-    },
-    { scope: gridContainer },
-  );
-
-  // Unified scroll animation — text reveal + social icons + footer bars
   useGSAP(
     () => {
       const splits: SplitText[] = [];
@@ -113,11 +71,11 @@ export default function ContactSection() {
 
       // Social icons animation
       if (socialLinks.current) {
-        tl.from(
+        tl.to(
           socialLinks.current.children,
           {
             y: 30,
-            opacity: 0,
+            opacity: 1,
             duration: 0.6,
             stagger: 0.1,
             ease: "back.out(1.7)",
@@ -139,14 +97,18 @@ export default function ContactSection() {
         "-=0.4",
       );
     },
-    { scope: contactContainer },
+    { scope: footerRef },
   );
 
   return (
-    <footer className="flex flex-col justify-between min-h-dvh overflow-hidden">
+    <footer
+      ref={footerRef}
+      id="contact"
+      className="flex flex-col justify-between gap-32 lg:gap-0 lg:min-h-dvh overflow-hidden"
+    >
       <div
         ref={contactContainer}
-        className="section-container container-padding flex justify-between items-center pt-13 lg:pt-16"
+        className="section-container container-padding flex flex-col items-start lg:flex-row   justify-between lg:items-center pt-13 lg:pt-32 "
       >
         <div>
           <h1
@@ -158,8 +120,9 @@ export default function ContactSection() {
           <div ref={contactDesc} className="invisible">
             <p>Hmmmmmmmmmmmmmmmmmmmmmmm...</p>
             <p>
-              Reach me at ahmedmoh0107@gmail.com and let&apos;s build something
-              meaningful.
+              Reach me at{" "}
+              <a href="mailto:ahmedmoh0107@gmail.com">ahmedmoh0107@gmail.com</a>{" "}
+              and let&apos;s build something meaningful.
             </p>
           </div>
         </div>
@@ -170,7 +133,7 @@ export default function ContactSection() {
             href="https://github.com/AhmedMohamed800"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center shrink-0 hover:opacity-70 transition-opacity duration-300"
+            className="inline-flex items-center justify-center shrink-0 opacity-0  hover:opacity-70 transition-opacity duration-300"
             aria-label="GitHub"
           >
             <svg
@@ -185,10 +148,10 @@ export default function ContactSection() {
 
           {/* LinkedIn */}
           <a
-            href="https://www.linkedin.com/in/ahmed-mohamed-a41468232/"
+            href="https://www.linkedin.com/in/ahmedmohdev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center shrink-0 hover:opacity-70 transition-opacity duration-300"
+            className="inline-flex items-center justify-center shrink-0  opacity-0 hover:opacity-70 transition-opacity duration-300"
             aria-label="LinkedIn"
           >
             <svg
@@ -203,10 +166,10 @@ export default function ContactSection() {
 
           {/* X (Twitter) */}
           <a
-            href="https://x.com/AhmedMo62917498"
+            href="https://x.com/AhmedMo83120311"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center shrink-0 hover:opacity-70 transition-opacity duration-300"
+            className="inline-flex items-center justify-center shrink-0  opacity-0 hover:opacity-70 transition-opacity duration-300"
             aria-label="X"
           >
             <svg
@@ -221,53 +184,53 @@ export default function ContactSection() {
         </div>
       </div>
       <div className="flex justify-end items-end  w-full" ref={gridContainer}>
-        <div className="flex items-end  h-100 flex-1">
-          <div className="footer-item flex-1 border bg-red border-white h-auto"></div>
+        <div className="flex items-end  h-100 flex-1 ">
+          <div className="footer-item flex-1 border bg-red border-white h-0"></div>
         </div>
-        <div className="flex items-end h-75 flex-1">
-          <div className="footer-item flex-1 border bg-red border-white h-auto"></div>
+        <div className="flex items-end h-75 flex-1 ">
+          <div className="footer-item flex-1 border bg-red border-white h-0"></div>
         </div>
         <div className="hidden lg:flex items-end h-50 flex-1">
-          <div className="footer-item flex-1 border bg-red border-white h-auto"></div>
+          <div className="footer-item flex-1 border bg-red border-white h-0"></div>
         </div>
         <div className="hidden lg:flex items-end h-75 flex-1">
-          <div className="footer-item flex-1 border bg-red border-white h-auto"></div>
+          <div className="footer-item flex-1 border bg-red border-white h-0"></div>
         </div>
         <div className="flex items-end h-100 flex-1">
-          <div className="footer-item flex-1 border bg-red border-white h-auto"></div>
+          <div className="footer-item flex-1 border bg-red border-white h-0"></div>
         </div>
         <div className="flex items-end h-[430px] flex-1">
-          <div className="footer-item flex-1 border bg-white border-black h-auto"></div>
+          <div className="footer-item flex-1 border bg-white border-black h-0"></div>
         </div>
         <div className="hidden lg:flex items-end h-[380px] flex-1">
-          <div className="footer-item flex-1 border bg-white border-black h-auto"></div>
+          <div className="footer-item flex-1 border bg-white border-black h-0"></div>
         </div>
         <div className="hidden lg:flex items-end h-[150px] flex-1 ">
-          <div className="footer-item flex-1 border bg-gold border-white h-auto"></div>
+          <div className="footer-item flex-1 border bg-gold border-white h-0"></div>
         </div>
         <div className="flex items-end h-[150px] flex-1">
-          <div className="footer-item flex-1 border bg-gold border-white h-auto"></div>
+          <div className="footer-item flex-1 border bg-gold border-white h-0"></div>
         </div>
         <div className="hidden lg:flex items-end h-[380px] flex-1">
-          <div className="footer-item flex-1 border bg-white border-black h-auto"></div>
+          <div className="footer-item flex-1 border bg-white border-black h-0"></div>
         </div>
         <div className="flex items-end h-[430px] flex-1">
-          <div className="footer-item flex-1 border bg-white border-black h-auto"></div>
+          <div className="footer-item flex-1 border bg-white border-black h-0"></div>
         </div>
         <div className="flex items-end  h-100 flex-1">
-          <div className="footer-item flex-1 border bg-black border-white h-auto"></div>
+          <div className="footer-item flex-1 border bg-black border-white h-0"></div>
         </div>
         <div className="hidden lg:flex items-end h-75 flex-1">
-          <div className="footer-item flex-1 border bg-black border-white h-auto"></div>
+          <div className="footer-item flex-1 border bg-black border-white h-0"></div>
         </div>
         <div className="hidden lg:flex items-end h-50 flex-1">
-          <div className="footer-item flex-1 border bg-black border-white h-auto"></div>
+          <div className="footer-item flex-1 border bg-black border-white h-0"></div>
         </div>
         <div className="flex items-end h-75 flex-1">
-          <div className="footer-item flex-1 border bg-black border-white h-auto"></div>
+          <div className="footer-item flex-1 border bg-black border-white h-0"></div>
         </div>
         <div className="flex items-end h-100 flex-1">
-          <div className="footer-item flex-1 border bg-black border-white h-auto"></div>
+          <div className="footer-item flex-1 border bg-black border-white h-0"></div>
         </div>
       </div>
     </footer>
